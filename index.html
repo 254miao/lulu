@@ -3,192 +3,85 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#ffffff">
-<title>噜噜大王1.0 kogpro</title>
+<title>噜噜大王 · 服务中心</title>
 <style>
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{margin:0;padding:0}
-  body{background:#fff;color:#24292f;
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{
+    min-height:100vh;background:#eaf1fb;
     font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue","Microsoft YaHei",sans-serif;
-    font-size:16px;line-height:1.85;max-width:760px;margin:0 auto;
-    padding:28px 22px 70px;-webkit-text-size-adjust:100%;word-break:break-word}
-  h1{font-size:26px;font-weight:700;margin:0 0 22px;letter-spacing:.5px}
-  hr{border:0;border-top:1px solid #e5e8ec;margin:0 0 18px}
-  h3{font-size:16.5px;font-weight:700;margin:26px 0 10px;color:#24292f}
-  ul{margin:0 0 6px;padding-left:26px}
-  li{margin:7px 0;line-height:1.85}
-  li::marker{color:#8b949e}
-  p{margin:10px 0}
-  a{color:#2f6bd8;text-decoration:none}
-  .tag{display:inline-block;background:#eef4ff;color:#3a5f9e;border-radius:4px;
-    padding:1px 7px;font-size:14px;margin-right:6px;line-height:1.7}
-  .red{color:#d81e06;font-weight:700}
-  .warnred{color:#d81e06;font-weight:700;line-height:1.9}
-  .card{border:1px solid #d8e2f0;background:#f8fbff;border-radius:8px;
-    padding:10px 14px;margin:12px 0;line-height:1.85}
-  .tblink{display:block;margin:12px 0 6px;padding:12px 14px;border:1px solid #f0b8b2;
-    background:#fff7f6;border-radius:8px;color:#c0392b;font-size:15px;line-height:1.8;word-break:break-all}
-  .tblink b{color:#d81e06}
-  .buy{display:inline-block;margin:10px 0 4px;padding:10px 20px;border-radius:6px;
-    background:#2f6bd8;color:#fff;font-weight:600;font-size:15px}
-  .small{font-size:14.5px;line-height:1.85}
-  .dlbtn{display:block;text-align:center;padding:14px 16px;margin:12px 0;
-    background:linear-gradient(180deg,#4a86e8,#2f6bd8);color:#fff !important;
-    border-radius:10px;font-weight:700;font-size:16.5px;text-decoration:none;
-    box-shadow:0 3px 10px rgba(47,107,216,.28)}
-  .dlbtn:active{background:#2559b8}
-  .pill{display:inline-block;border:1px solid #d8e2f0;background:#f8fbff;color:#3a5f9e;
-    border-radius:4px;padding:6px 12px;font-size:14.5px;margin:10px 0}
-  .notice{background:#fff8f0;border:1px solid #f5c98b;border-radius:10px;
-    padding:14px 16px;margin:16px 0 8px;line-height:1.9}
-  .notice h4{margin:0 0 6px;font-size:17px;color:#c46a00}
-  .notice ol{margin:0 0 0;padding-left:24px;color:#8a5500}
-  .notice .imp{margin-top:10px;color:#c0392b;font-size:15px;line-height:1.85}
+    -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:26px 14px 40px}
 
-  /* ---- 社群入口卡片 ---- */
-  .joinbox{
-    margin:22px 0 6px;padding:18px 16px;border-radius:14px;
-    background:linear-gradient(160deg,#f2f7ff,#eaf1ff);
-    border:1px solid #d5e2f6;text-align:center;
-    box-shadow:0 6px 18px rgba(47,107,216,.10)}
-  .joinbox h4{margin:0 0 4px;font-size:18px;color:#1f3f7a;font-weight:700}
-  .joinbox .sub{font-size:14px;color:#6b7d99;margin-bottom:14px;line-height:1.7}
-  .joinbox img.qr{width:150px;height:150px;display:block;margin:0 auto 14px;
-    border-radius:10px;background:#fff;padding:6px}
-  .joinbtn{
-    display:block;text-align:center;padding:15px 16px;margin:10px 0 6px;
-    background:linear-gradient(180deg,#33c15d,#22a048);color:#fff !important;
-    border-radius:12px;font-weight:700;font-size:17px;text-decoration:none;
-    box-shadow:0 4px 12px rgba(34,160,72,.30)}
-  .joinbtn:active{background:#1c8b3c}
-  .copynum{
-    display:inline-block;margin-top:8px;padding:8px 16px;border-radius:20px;
-    background:#fff;border:1px dashed #b9cdee;color:#3a5f9e;font-size:15px;
-    font-weight:600;letter-spacing:.5px;cursor:pointer}
-  .copynum:active{background:#f0f6ff}
-  .tips{font-size:13.5px;color:#8b97a8;line-height:1.7;margin-top:10px}
+  .card{
+    background:linear-gradient(160deg,#f4f8ff,#e9f0fd);
+    border:1px solid #d5e2f6;border-radius:16px;
+    padding:26px 20px 24px;text-align:center;
+    box-shadow:0 8px 26px rgba(80,120,200,.10);
+  }
+  .card h1{font-size:22px;font-weight:700;color:#1f3a6e;letter-spacing:.5px}
+  .card .sub{font-size:14px;color:#6b7d99;margin:10px 0 0;line-height:1.8}
+
+  .qr{
+    width:176px;height:176px;display:block;margin:22px auto 20px;
+    background:#fff;padding:10px;border-radius:16px;
+    box-shadow:0 6px 20px rgba(80,120,200,.16);
+  }
+
+  .btn{
+    display:block;text-decoration:none;text-align:center;
+    padding:16px;border-radius:13px;font-size:17px;font-weight:700;color:#fff !important;
+    background:linear-gradient(180deg,#54c96e,#3aa858);
+    box-shadow:0 8px 20px rgba(58,168,88,.32);
+  }
+  .btn:active{background:#329148}
+
+  .num{
+    display:inline-block;margin-top:16px;padding:9px 22px;border-radius:22px;
+    background:#fff;border:1px dashed #b9cdee;color:#3a5f9e;
+    font-size:15px;font-weight:600;letter-spacing:.8px;cursor:pointer;
+  }
+  .num:active{background:#f2f7ff}
+
+  .hint{font-size:13px;color:#8b97a8;margin-top:14px;line-height:1.8}
+  .foot{text-align:center;font-size:12px;color:#93a3ba;margin-top:26px}
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>噜噜大王1.0 kogpro</h1>
-<hr>
+  <div class="card">
+    <h1>最新版本 · 获取与售后</h1>
+    <p class="sub">点击下方按钮直接进入交流群<br>安装指导 · 使用答疑 · 售后处理</p>
 
-<h3>运用环境</h3>
-<ul>
-  <li>支持iOS全系统（以及最新iOS27系统）</li>
-</ul>
+    <img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAAEBklEQVR4nO2dXWrkOhBGT40F/ShDLyBLce9gljRkSbMDeylZQMB+bLCp+1AlS04CcxnSt7svVQ/Bxj60DMWn+pEUUf7Oph9/CUKQQQYZ5AdyEbfLIgJLQi72cBP/sz9wS/cbbZAPSXaqqqpAp3IB9LXfhKn3W7lkVaYeGFRVdb7naIN8NDIBINCtuPCAQELIW1KWHljOK+QZWHoYft9rtEE+Ipnam6wwvawA3cp0OakM45oUrvIp9n6u7wzyduTBh5YeyFuC/C6QZ9xzlrPCktbv+c0g/4+kqq5AVmV4S+i4JBjeRJgkIZe8wjBjr+h459EG+XjkZskWLAmgU/k1d9pe7bnaJCIi/T1HG+SjkWhrK6ozqM6d6kinkNdymw+vjs/1nUHelFxS0RdxHYJ8FQZ19xHpa6UoEfWhII9mImMSVHTI3KcKz9i8jD8IHQqymGqJfRjmzguIdqVqc5lPaOZXqxcaw4eCLOa+AVgANOyyNGZVL0zbK502AhU+FGQll1Npc+SrWCg09Z1VhvRVEnY76FUwvXqLeCjIxrz7RdEhqwBlb5/Z5GWeYy01fKYLHQqyWBPnkFW90HiIkSweGqG8QvhQkI3VmLpGRlT3GWpBKO8hdvhQkK2VdH31jN66Hs16EChitEfXEVMH2VptlbnNnn6Z7VGQl4vmqA8F+dGa+hC4IjViNO4xkgdKeyfkub4zyNuRbV5mEjRTqohfRNI1eAofCrJYaXNoyd5rXlbarfZeVaSoUwd5MNeh2s1gV5qiPmUuq8Xq8KEgG3MJmru2KuRyc5jL9ldi7UeQRys6pLZgqPbt20h6T/qHOfKyID9a9SG7b5e87ppDVxaAlAktfCjI3bSaJWK5XeLxybnsKnwoyMbK4ldoK0Clh1aK1XtgXRL88KEgdysB0KEgVFtlTQe/tNSI+lCQB2vaYo3S7OpjQXT1oTnq1EF+Jpe0r2PcREc2O72hacYCyMV2UnfqW2Gf7juDvBGZgE2UPCNwckWaXlZ/MP18R3zb63uCfBW1Ha/P9Z1B/idkk43tiz3syfB2Kitgl5Pattd7jzbIhyEP64fm2qjf64nNgthi0esI8mBNfci3BYGXEvMXeZk9DR8KsrG69qPqUM3jm6Wxe5oWPhTkwRJ+fBWIn2GVVga1c63Ur/K7KMsZZYGIqYP8gvyw1V4ubKKqV9uDbys+pn4rR37cebRBPhZ5OMPKTmU4KZN0KsPYqXjSn1YZ5nOcYRXkn0hb5+GbXfW1B4Z5EwuKppcVP9LqO38zyKcnTYdKs2NLCiBkO9hzVZaziZFOP+0VueNog3xUsj0HTS52jF6yLF+k30TVyos+73m56Pm+M8jbkJ/Pe/2XFv9rIcggg/wm8h/dxalJETsL0wAAAABJRU5ErkJggg==" alt="扫码进入">
 
-<h3>安装条件</h3>
-<div class="tblink">
-  <b>必须使用下方淘宝链接这个全能签</b>，其他的会出客户端7天。<br>
-  如果原本有全能签，要卸载之前的全能签，再装新的全能签和证书，<b>不要用之前的证书</b>，否则也会7天。<br>
-  手机iOS秒出【质保40天定制权限】<br>
-  <a href="https://e.tb.cn/h.SjiVSzdxx8iU4zb?tk=OVumfXG7DYu" target="_blank" rel="noopener">https://e.tb.cn/h.SjiVSzdxx8iU4zb?tk=OVumfXG7DYu</a>
-</div>
-<a class="buy" href="https://e.tb.cn/h.SjiVSzdxx8iU4zb?tk=OVumfXG7DYu" target="_blank" rel="noopener">淘宝下单</a>
+    <a class="btn" href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=1187873278&card_type=group&source=qrcode">点击直接进群</a>
 
-<h3>功能特征</h3>
-<ul>
-  <li><span class="tag">全项透视</span>全图真实视野（安全）</li>
-  <li><span class="tag">全局视距</span>自定义视野高度（高危）</li>
-</ul>
+    <div class="num" onclick="copyNum(this)">群号 1187873278</div>
 
-<h3>使用说明</h3>
-<ul>
-  <li>全图透视静默生效，不生效请手动开启一次</li>
-  <li>三指双击屏幕开启或隐藏菜单</li>
-</ul>
-
-<p class="card">
-  <span style="color:#d81e06;font-weight:700">⚠️ 诫言：【避免行为异常 各分路演戏详细说明】</span><br>
-  <a href="https://b23.tv/FOBy2YX" target="_blank" rel="noopener">https://b23.tv/FOBy2YX</a>
-</p>
-
-<p class="card" style="color:#d81e06;font-weight:700">
-  （“行为异常”只要出现这四个字的邮件跟商品没有关系，演技操作问题❗）
-</p>
-
-<p class="card warnred">
-产品只能保证功能运行基础安全，而非使用即可为所欲为。游戏存在行为算法检测，需玩家自身把控尺度、规避行为检测；游戏中的打法操作至关重要，克制心态、压制爽快、保证合理游戏行为，才能守住最后安全大关。无视野打击是绝对大忌，翻车率极高，不可因一时游戏收益得失最终导致账号长久损失。
-</p>
-
-<ol class="small">
-  <li>不要拖视角去看无视野</li>
-  <li>无视野不可以提前捏技能</li>
-  <li>不要精准探草，不要打无视野预判</li>
-  <li>不要让对面觉得你是挂，吃举报</li>
-  <li>开局不可以百分百反野</li>
-  <li>长时间没漏视野的人不要直接去草里找</li>
-  <li>对面漏视野再抓人</li>
-  <li>被抓可以走，对面假视野绕回来不可以</li>
-  <li>多探没人的草</li>
-  <li>遇到蹲草不要过去，去干别的事</li>
-  <li>逃跑不要绕着对方走</li>
-  <li>不要百分百反到野怪，可以抢，不要避于</li>
-  <li>不要无视野无目的去找人，等对面走过</li>
-  <li>不该拿的人头少去拿，适当放走对面</li>
-</ol>
-
-<h3>点击下载👇</h3>
-<p><a class="dlbtn" href="http://47.109.150.110:8080/dl/KogPro.ipa">kogpro下载（维护中）</a></p>
-<p><a class="dlbtn" href="http://47.109.150.110:8080/dl/lulu10_v2.ipa">噜噜大王v2（点击下载）</a></p>
-<p><span class="pill"><span class="red">使用前请优先阅读理解</span> 使用说明</span></p>
-
-<h3>更新日志</h3>
-<ul>
-  <li>适配s45赛季，新赛季刚更新高危弹窗处罚频繁（属于正常现象），若出现高危按照提示解开继续玩即可</li>
-</ul>
-
-<p><span class="pill">发布前均已通过测试 <span class="red">请放心食用</span></span></p>
-
-<div class="notice">
-  <h4>📢 噜噜大王1.0旧版本v2更新公告</h4>
-  <div>本次更新内容：</div>
-  <ol>
-    <li>优化核心加载逻辑，提升运行稳定性</li>
-    <li>调整部分模块调用方式，降低兼容性风险</li>
-    <li>修复部分机型偶发闪退问题</li>
-    <li>优化网络通讯链路，减少验证延迟</li>
-  </ol>
-  <div class="imp">
-    <b>重要提醒：</b><br>
-    • 请务必安装最新版本，旧版本已停止支持，继续使用可能影响账号安全<br>
-    <b>关于近期情况：</b>近期部分用户反馈账号异常，已完成排查并做了针对性处理。目前新版本测试稳定，请放心使用
+    <div class="hint">手机QQ 可直接点击上方按钮进群<br>其他设备请扫码或复制群号搜索</div>
   </div>
+
+  <div class="foot">Đội phát triển Lulu Đại Vương</div>
+
 </div>
-
-<h3>问题反馈</h3>
-<ul>
-  <li>使用中存在任何相关异常问题可提交反馈</li>
-  <li>积极响应将有效提高产品维护质量及效率</li>
-</ul>
-
-<div class="joinbox">
-  <h4>最新版本 · 获取与售后</h4>
-  <div class="sub">点击下方按钮直接进入交流群<br>安装指导 · 使用答疑 · 售后处理</div>
-  <img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAcIAAAHCAQAAAABUY/ToAAAEBklEQVR4nO2dXWrkOhBGT40F/ShDLyBLce9gljRkSbMDeylZQMB+bLCp+1AlS04CcxnSt7svVQ/Bxj60DMWn+pEUUf7Oph9/CUKQQQYZ5AdyEbfLIgJLQi72cBP/sz9wS/cbbZAPSXaqqqpAp3IB9LXfhKn3W7lkVaYeGFRVdb7naIN8NDIBINCtuPCAQELIW1KWHljOK+QZWHoYft9rtEE+Ipnam6wwvawA3cp0OakM45oUrvIp9n6u7wzyduTBh5YeyFuC/C6QZ9xzlrPCktbv+c0g/4+kqq5AVmV4S+i4JBjeRJgkIZe8wjBjr+h459EG+XjkZskWLAmgU/k1d9pe7bnaJCIi/T1HG+SjkWhrK6ozqM6d6kinkNdymw+vjs/1nUHelFxS0RdxHYJ8FQZ19xHpa6UoEfWhII9mImMSVHTI3KcKz9i8jD8IHQqymGqJfRjmzguIdqVqc5lPaOZXqxcaw4eCLOa+AVgANOyyNGZVL0zbK502AhU+FGQll1Npc+SrWCg09Z1VhvRVEnY76FUwvXqLeCjIxrz7RdEhqwBlb5/Z5GWeYy01fKYLHQqyWBPnkFW90HiIkSweGqG8QvhQkI3VmLpGRlT3GWpBKO8hdvhQkK2VdH31jN66Hs16EChitEfXEVMH2VptlbnNnn6Z7VGQl4vmqA8F+dGa+hC4IjViNO4xkgdKeyfkub4zyNuRbV5mEjRTqohfRNI1eAofCrJYaXNoyd5rXlbarfZeVaSoUwd5MNeh2s1gV5qiPmUuq8Xq8KEgG3MJmru2KuRyc5jL9ldi7UeQRys6pLZgqPbt20h6T/qHOfKyID9a9SG7b5e87ppDVxaAlAktfCjI3bSaJWK5XeLxybnsKnwoyMbK4ldoK0Clh1aK1XtgXRL88KEgdysB0KEgVFtlTQe/tNSI+lCQB2vaYo3S7OpjQXT1oTnq1EF+Jpe0r2PcREc2O72hacYCyMV2UnfqW2Gf7juDvBGZgE2UPCNwckWaXlZ/MP18R3zb63uCfBW1Ha/P9Z1B/idkk43tiz3syfB2Kitgl5Pattd7jzbIhyEP64fm2qjf64nNgthi0esI8mBNfci3BYGXEvMXeZk9DR8KsrG69qPqUM3jm6Wxe5oWPhTkwRJ+fBWIn2GVVga1c63Ur/K7KMsZZYGIqYP8gvyw1V4ubKKqV9uDbys+pn4rR37cebRBPhZ5OMPKTmU4KZN0KsPYqXjSn1YZ5nOcYRXkn0hb5+GbXfW1B4Z5EwuKppcVP9LqO38zyKcnTYdKs2NLCiBkO9hzVZaziZFOP+0VueNog3xUsj0HTS52jF6yLF+k30TVyos+73m56Pm+M8jbkJ/Pe/2XFv9rIcggg/wm8h/dxalJETsL0wAAAABJRU5ErkJggg==" alt="扫码进群">
-  <a class="joinbtn" href="mqqapi://card/show_pslcard?src_type=internal&version=1&uin=1187873278&card_type=group&source=qrcode">点击直接进群</a>
-  <div class="copynum" onclick="copyNum(this)">群号 1187873278</div>
-  <div class="tips">手机QQ 可直接点击上方按钮进群<br>其他设备请扫码或复制群号搜索</div>
-</div>
-
-<p style="text-align:center;color:#9aa4b2;font-size:12.5px;margin-top:34px">Đội phát triển Lulu Đại Vương</p>
 
 <script>
 function copyNum(el){
   var n = "1187873278";
-  var done = function(){ var t = el.textContent; el.textContent = "✅ 已复制 " + n; setTimeout(function(){ el.textContent = t; }, 1600); };
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    navigator.clipboard.writeText(n).then(done).catch(fallback);
-  } else { fallback(); }
-  function fallback(){
-    var ta = document.createElement("textarea");
-    ta.value = n; ta.style.position="fixed"; ta.style.opacity="0";
-    document.body.appendChild(ta); ta.select();
-    try{ document.execCommand("copy"); done(); }catch(e){}
-    document.body.removeChild(ta);
-  }
+  var old = el.textContent;
+  var ok = function(){ el.textContent = "✅ 已复制"; setTimeout(function(){ el.textContent = old; }, 1600); };
+  var fb = function(){
+    var t = document.createElement("textarea");
+    t.value = n; t.style.position="fixed"; t.style.opacity="0";
+    document.body.appendChild(t); t.select();
+    try{ document.execCommand("copy"); ok(); }catch(e){}
+    document.body.removeChild(t);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(n).then(ok).catch(fb);
+  } else { fb(); }
 }
 </script>
 </body>
